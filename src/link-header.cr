@@ -113,8 +113,8 @@ class LinkHeader
       href = scanner[1]
       attrs = {} of String => String
       while scanner.scan(ATTR)
-        attr_name, token, quoted = scanner[1], scanner[3]?, scanner[4]
-        attrs[attr_name] = token || quoted.gsub(/\\"/, '"')
+        attr_name, token, quoted = scanner[1], scanner[3]?, scanner[4]?
+        attrs[attr_name] = (token || quoted).not_nil!.gsub(/\\"/, '"')
         break unless scanner.scan(SEMI)
       end
       links[href] = attrs

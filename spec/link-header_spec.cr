@@ -29,4 +29,13 @@ describe LinkHeader do
     link["index"].should eq("https://example.org/index")
     link["start"].should eq("https://example.org/")
   end
+
+  it "should parse a link header with unquoted attributes" do
+    raw_header = %(<https://meraki.com/api/v1>; rel=first, <https://n293.meraki.com/api/v1/networks>; rel=next)
+    link = LinkHeader.new raw_header
+    link.links.should eq({
+      "https://meraki.com/api/v1"               => {"rel" => "first"},
+      "https://n293.meraki.com/api/v1/networks" => {"rel" => "next"},
+    })
+  end
 end
