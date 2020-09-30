@@ -11,7 +11,7 @@ Parses link headers
 
    ```yaml
    dependencies:
-     coap:
+     link-header:
        github: spider-gazelle/link-header
    ```
 
