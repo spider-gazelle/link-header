@@ -1,6 +1,6 @@
 # Crystal Lang HTTP Link Header Parser
 
-[![Build Status](https://travis-ci.com/spider-gazelle/link-header.svg?branch=master)](https://travis-ci.com/github/spider-gazelle/link-header)
+[![CI](https://github.com/spider-gazelle/link-header/actions/workflows/ci.yml/badge.svg)](https://github.com/spider-gazelle/link-header/actions/workflows/ci.yml)
 
 Parses link headers
 
